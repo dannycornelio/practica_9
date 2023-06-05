@@ -71,7 +71,7 @@ if($_POST['venta_cliente'] != '' && $_POST['venta_fecha'] != '' && count($produc
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/crudphp18may2023/vistas/ventas/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/practica_9/vistas/ventas/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

@@ -19,7 +19,7 @@ require_once '../../modelos/Producto.php';
     <div class="container">
         <h1 class="text-center">Formulario de ingreso de ventas</h1>
         <div class="row justify-content-center">
-            <form action="/crudphp18may2023/controladores/ventas/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+            <form action="/practica_9/controladores/ventas/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="venta_cliente">Cliente</label>

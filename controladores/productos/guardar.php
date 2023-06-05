@@ -54,7 +54,7 @@ if($_POST['producto_nombre'] != '' && $_POST['producto_precio'] != ''){
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/crudphp18may2023/vistas/productos/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/practica_9/vistas/productos/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
