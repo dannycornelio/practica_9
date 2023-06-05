@@ -16,10 +16,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica_8/vistas/clientes/index.php">Agregar Cliente</a>
+                            <a class="nav-link" href="/practica_9/vistas/clientes/index.php">Agregar Cliente</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica_8/vistas/clientes/buscar.php">Buscar Cliente</a>
+                            <a class="nav-link" href="/practica_9/vistas/clientes/buscar.php">Buscar Cliente</a>
                         </li>
                     </ul>
                 </li>
