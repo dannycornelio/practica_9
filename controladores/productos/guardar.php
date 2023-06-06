@@ -60,4 +60,3 @@ if($_POST['producto_nombre'] != '' && $_POST['producto_precio'] != ''){
     </div>
 </body>
 </html>
-

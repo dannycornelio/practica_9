@@ -54,5 +54,3 @@ require '../../modelos/Producto.php';
     </div>
 </body>
 </html>
-
-

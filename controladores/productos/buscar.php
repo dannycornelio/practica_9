@@ -46,8 +46,8 @@ try {
                             <td><?= $key + 1 ?></td>
                             <td><?= $producto['PRODUCTO_NOMBRE'] ?></td>
                             <td><?= $producto['PRODUCTO_PRECIO'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/crudphp18may2023/vistas/productos/modificar.php?producto_id=<?= $producto['PRODUCTO_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/crudphp18may2023/controladores/productos/eliminar.php?producto_id=<?= $producto['PRODUCTO_ID']?>">Eliminar</a></td>
+                            <td><a class="btn btn-warning w-100" href="/practica_9/vistas/productos/modificar.php?producto_id=<?= $producto['PRODUCTO_ID']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/practica_9/controladores/productos/eliminar.php?producto_id=<?= $producto['PRODUCTO_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>

@@ -77,4 +77,3 @@ if($_POST['venta_cliente'] != '' && $_POST['venta_fecha'] != '' && count($produc
     </div>
 </body>
 </html>
-

@@ -22,8 +22,11 @@ class Venta extends Conexion{
         return $resultado;
     }
 
-    public function buscar(){
-        $sql = "SELECT * from ventas inner join clientes on venta_cliente = cliente_id where venta_situacion = 1 ";
+        public function buscar(){
+            $sql = "SELECT detalle_id, cliente_nombre, venta_fecha, producto_nombre, producto_precio, detalle_cantidad, (producto_precio * detalle_cantidad) as total from ventas inner join clientes on venta_cliente = cliente_id  
+             INNER JOIN detalle_ventas ON venta_id = detalle_venta
+             INNER JOIN productos ON detalle_producto = producto_id
+            where venta_situacion= 1 ";
 
         if($this->venta_cliente != ''){
             $sql .= " and venta_cliente = $this->venta_cliente ";
@@ -40,5 +43,23 @@ class Venta extends Conexion{
         $resultado = self::servir($sql);
         return $resultado;
     }
+
+    
+    public function factura($id){
+        $sql = "SELECT detalle_id, cliente_nombre, venta_fecha, cliente_nit, producto_nombre, producto_precio, detalle_cantidad, (producto_precio * detalle_cantidad) as total from ventas inner join clientes on venta_cliente = cliente_id  
+         INNER JOIN detalle_ventas ON venta_id = detalle_venta
+         INNER JOIN productos ON detalle_producto = producto_id
+        where venta_situacion= 1 and detalle_id= $id ";
+
+   
+
+
+    $resultado = self::servir($sql);
+    return $resultado;
+}
+
+    
+
+
 
 }

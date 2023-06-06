@@ -1,24 +1,19 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+
 require_once '../../modelos/Venta.php';
+
 try {
     $_GET['venta_fecha'] = $_GET['venta_fecha'] != '' ? date('Y-m-d', strtotime($_GET['venta_fecha'])) : '';
     $venta = new Venta($_GET);
     
     $ventas = $venta->buscar();
-    // echo "<pre>";
-    // var_dump($ventas);
-    // echo "</pre>";
-    // $error = "NO se guardó correctamente";
 } catch (PDOException $e) {
     $error = $e->getMessage();
-} catch (Exception $e2){
+} catch (Exception $e2) {
     $error = $e2->getMessage();
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,27 +30,35 @@ try {
                 <table class="table table-bordered table-hover">
                     <thead class="table-dark">
                         <tr>
-                            <th>NO. </th>
+                            <th>NO.</th>
                             <th>CLIENTE</th>
                             <th>FECHA</th>
+                            <th>PRODUCTO</th>
+                            <th>PRECIO UNITARIO</th>
+                            <th>CANTIDAD</th>
+                            <th>TOTAL</th>
                             <th>DETALLE</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($ventas) > 0):?>
-                        <?php foreach($ventas as $key => $venta) : ?>
-                        <tr>
-                            <td><?= $key + 1 ?></td>
-                            <td><?= $venta['CLIENTE_NOMBRE'] ?></td>
-                            <td><?= $venta['VENTA_FECHA'] ?></td>
-                            <td><a class="btn btn-info w-100" href="/practica_9/vistas/ventas/factura.php?venta_id=<?= $venta['VENTA_ID']?>">VER DETALLE</a></td>
-                        </tr>
-                        <?php endforeach ?>
-                        <?php else :?>
+                        <?php if (count($ventas) > 0) : ?>
+                            <?php foreach ($ventas as $key => $venta) : ?>
+                                <tr>
+                                    <td><?= $key + 1 ?></td>
+                                    <td><?= $venta['CLIENTE_NOMBRE'] ?></td>
+                                    <td><?= $venta['VENTA_FECHA'] ?></td>
+                                    <td><?= $venta ['PRODUCTO_NOMBRE'] ?></td>
+                                    <td><?= $venta['PRODUCTO_PRECIO'] ?></td>
+                                    <td><?= $venta['DETALLE_CANTIDAD'] ?></td>
+                                    <td><?= $venta['TOTAL'] ?></td>
+                                    <td><a class="btn btn-info w-100" href="/practica_9/vistas/ventas/factura.php?venta_id=<?php echo $venta['DETALLE_ID'] ?>">VER DETALLE</a></td>
+                                </tr>
+                            <?php endforeach ?>
+                        <?php else : ?>
                             <tr>
-                                <td colspan="4">NO EXISTEN REGISTROS</td>
+                                <td colspan="8">NO EXISTEN REGISTROS</td>
                             </tr>
-                        <?php endif?>
+                        <?php endif ?>
                     </tbody>
                 </table>
             </div>

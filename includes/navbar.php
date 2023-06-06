@@ -15,27 +15,42 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/crudphp18may2023/vistas/ventas/index.php">Ingresar venta</a>
+                            <a class="nav-link" href="/practica_9/vistas/ventas/index.php">Ingresar venta</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/crudphp18may2023/vistas/ventas/buscar.php">Buscar venta</a>
+                            <a class="nav-link" href="/practica_9/vistas/ventas/buscar.php">Buscar venta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/practica_9/controladores/ventas/detalle_ventas.php">Detalle de venta</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Productos
+                    Productos
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/crudphp18may2023/vistas/productos/index.php">Crear producto</a>
+                            <a class="nav-link" href="/practica_9/vistas/productos/index.php">Crear producto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/crudphp18may2023/vistas/productos/buscar.php">Buscar producto</a>
+                            <a class="nav-link" href="/practica_9/vistas/productos/buscar.php">Buscar producto</a>
                         </li>
                     </ul>
                 </li>
-
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Clientes
+                    </a>
+                    <ul class="dropdown-menu bg-dark">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/practica_9/vistas/clientes/index.php">Crear cliente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/practica_9/vistas/clientes/buscar.php">Buscar cliente</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
