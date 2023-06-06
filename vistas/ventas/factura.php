@@ -13,15 +13,6 @@ require '../../modelos/Cliente.php';
         $factura = $venta->factura($id);
 
  
-        // $productos = $detalle->buscar();
-        // echo "<pre>";
-        // var_dump($ventas);
-        // echo "</pre>";
-        // echo "<pre>";
-        // var_dump($productos);
-        // echo "</pre>";
-        // exit;
-        // // $error = "NO se guardó correctamente";
         $subtotal = 0;
         $cantidad = 0;
     } catch (PDOException $e) {
@@ -54,9 +45,22 @@ require '../../modelos/Cliente.php';
     </thead>
     <tbody>
         <tr>
+
             <td><strong>FECHA:</strong></td>
             <?php foreach ($factura as $key => $venta) : ?>
-                <td><?= $venta['VENTA_FECHA'] ?></td>
+                <?php
+                // Obtener la fecha de la venta
+                $ventaFecha = $venta['VENTA_FECHA'];
+
+                // Convertir la fecha a un objeto DateTime
+                $fechaObjeto = new DateTime($ventaFecha);
+
+                // Formatear la fecha en el formato deseado
+                $fechaFormateada = $fechaObjeto->format('d M Y H:i');
+
+                // Mostrar la fecha formateada en la tabla
+                ?>
+                <td><?= $fechaFormateada ?></td>
             <?php endforeach ?>
         </tr>
         <tr>

@@ -3,15 +3,22 @@
 require_once '../../modelos/Venta.php';
 
 try {
-    $_GET['venta_fecha'] = $_GET['venta_fecha'] != '' ? date('Y-m-d', strtotime($_GET['venta_fecha'])) : '';
+    if ($_GET['venta_fecha'] != '') {
+        $fecha = new DateTime($_GET['venta_fecha']);
+        $formattedDate = $fecha->format('d M Y H:i');
+        $_GET['venta_fecha'] = $formattedDate;
+    } else {
+        $_GET['venta_fecha'] = '';
+    }
+
     $venta = new Venta($_GET);
-    
     $ventas = $venta->buscar();
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2) {
     $error = $e2->getMessage();
 }
+
 ?>
 
 <!DOCTYPE html>
